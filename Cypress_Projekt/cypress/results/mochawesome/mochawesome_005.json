@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-02-22T12:04:45.229Z",
+    "end": "2023-02-22T12:04:48.095Z",
+    "duration": 2866,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "34054ff0-b070-4ea0-bee6-ca316a7bc55b",
+      "title": "",
+      "fullFile": "cypress/integration/asercje.js",
+      "file": "cypress/integration/asercje.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a574e869-1718-467f-a351-16b9fd14cbfc",
+          "title": "E2E - Asercje",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Expect oraz Should",
+              "fullTitle": "E2E - Asercje Expect oraz Should",
+              "timedOut": null,
+              "duration": 2688,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\"); // to mamy określone w pliku cypress.json\n//Weryfikacja tekstu\ncy.get('a[title=\"Contact us\"]').should(\"contain\", \"Contact us\");\ncy.get('a[title=\"Contact us\"]').then(zakladka => {\n  expect(zakladka).to.contain(\"Contact us\");\n}); //Sprawdzenie czy nie zawiera tekstu\ncy.get('a[title=\"Contact us\"]').should(\"not.contain\", \"Sign up\");\ncy.get('a[title=\"Contact us\"]').then(zakladka => {\n  expect(zakladka).not.to.contain(\"Sign up\");\n}); //weryfikacja czy znacznik posiada klasę\ncy.get('#search_query_top').should(\"have.class\", \"form-control\");\ncy.get('#search_query_top').then(wyszukiwarka => {\n  expect(wyszukiwarka).to.have.class(\"form-control\");\n}); //Czy element jest widoczny\ncy.get('#search_query_top').should(\"be.visible\");\ncy.get('#search_query_top').then(wyszukiwarka => {\n  expect(wyszukiwarka).to.be.visible;\n}); //weryfikacja ilości pobranych elementów\ncy.get('ul.sf-menu').find('li').should('have.length', 16);\ncy.get('ul.sf-menu').find('li').then(zakladki => {\n  expect(zakladki).to.have.length(16);\n}); //weryfikacja wartości css danego elementu\ncy.get('#search_query_top').should(\"have.css\", \"height\", \"45px\");\ncy.get('#search_query_top').then(wyszukiwarka => {\n  expect(wyszukiwarka).have.css('height', '45px');\n});",
+              "err": {},
+              "uuid": "09f8453f-cfb3-4c21-8340-f0f2b0e52ba9",
+              "parentUUID": "a574e869-1718-467f-a351-16b9fd14cbfc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "09f8453f-cfb3-4c21-8340-f0f2b0e52ba9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2688,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

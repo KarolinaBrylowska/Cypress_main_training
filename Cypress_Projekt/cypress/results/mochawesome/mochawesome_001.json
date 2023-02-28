@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-02-22T12:04:12.713Z",
+    "end": "2023-02-22T12:04:14.444Z",
+    "duration": 1731,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5e780e88-8f68-482e-95cc-6fe02cc5c91d",
+      "title": "",
+      "fullFile": "cypress/integration/API/drugi_test_API.js",
+      "file": "cypress/integration/API/drugi_test_API.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a1b52079-087f-45ea-a7a0-a22cb1e644d1",
+          "title": "Wykonywanie zapytania bezpośrednio do API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Autoryzacja + dodawanie nowego wpisu",
+              "fullTitle": "Wykonywanie zapytania bezpośrednio do API Autoryzacja + dodawanie nowego wpisu",
+              "timedOut": null,
+              "duration": 1591,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const daneAutoryzacja = {\n  \"user\": {\n    \"email\": \"karolina.brylowska@test.com\",\n    \"password\": \"karolina@\"\n  }\n};\ncy.request(\"POST\", \"https://api.realworld.io/api/users/login\", daneAutoryzacja).its(\"body\").then(resp => {\n  const authToken = resp.user.token;\n  console.log(authToken);\n  const daneArt = {\n    \"article\": {\n      \"tagList\": [],\n      \"title\": \"Karolina\",\n      \"description\": \"Jestem mistrzem\",\n      \"body\": \"blablabla\"\n    }\n  };\n  cy.request({\n    method: \"POST\",\n    url: \"https://conduit.productionready.io/api/articles/\",\n    body: daneArt,\n    headers: {\n      'Authorization': \"Token \" + authToken\n    }\n  }).then(res => {\n    expect(res.status).to.equal(200);\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://conduit.productionready.io/api/articles/\n\nThe response we received from your web server was:\n\n  > 422: Unprocessable Entity\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://conduit.productionready.io/api/articles/\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imthcm9saW5hLmJyeWxvd3NrYUB0ZXN0LmNvbSIsInVzZXJuYW1lIjoia2Fyb2xpbmFfYnJ5bG93c2thIiwiaWF0IjoxNjc3MDY3NDUzLCJleHAiOjE2ODIyNTE0NTN9.VvnaLRWLACVRItmCc6ZkFK0pZPAoP9bjcNz68VsLMnI\",\n  \"user-agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.5.1 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 96,\n  \"referer\": \"https://conduit.productionready.io/api/articles/\"\n}\nBody: {\"article\":{\"tagList\":[],\"title\":\"Karolina\",\"description\":\"Jestem mistrzem\",\"body\":\"blablabla\"}}\nRedirects: [\n  \"307: https://api.realworld.io/api/articles/\"\n]\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 422 - Unprocessable Entity\nHeaders: {\n  \"date\": \"Wed, 22 Feb 2023 12:04:14 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"39\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"access-control-allow-origin\": \"*\",\n  \"etag\": \"W/\\\"27-BNeuaWQ7DHvW/r+pl+qdJiF06Is\\\"\",\n  \"via\": \"1.1 vegur\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"report-to\": \"{\\\"endpoints\\\":[{\\\"url\\\":\\\"https:\\\\/\\\\/a.nel.cloudflare.com\\\\/report\\\\/v3?s=C7VAb9Sxier6NB3Nst1JUC6VGfgvRNOuQyGzwNU7K2a%2BzrZm%2BePeiOtzFBt9GlEjCQR6qa65cJwPIe1L58schtrWVQloaP4EFy8%2BLQs1cAGWd%2FMx7abaSonoKFkfzucCIlpc\\\"}],\\\"group\\\":\\\"cf-nel\\\",\\\"max_age\\\":604800}\",\n  \"nel\": \"{\\\"success_fraction\\\":0,\\\"report_to\\\":\\\"cf-nel\\\",\\\"max_age\\\":604800}\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"79d795429b350028-WAW\",\n  \"alt-svc\": \"h3=\\\":443\\\"; ma=86400, h3-29=\\\":443\\\"; ma=86400\"\n}\nBody: {\n  \"errors\": {\n    \"title\": [\n      \"must be unique\"\n    ]\n  }\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://conduit.productionready.io/api/articles/\n\nThe response we received from your web server was:\n\n  > 422: Unprocessable Entity\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://conduit.productionready.io/api/articles/\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imthcm9saW5hLmJyeWxvd3NrYUB0ZXN0LmNvbSIsInVzZXJuYW1lIjoia2Fyb2xpbmFfYnJ5bG93c2thIiwiaWF0IjoxNjc3MDY3NDUzLCJleHAiOjE2ODIyNTE0NTN9.VvnaLRWLACVRItmCc6ZkFK0pZPAoP9bjcNz68VsLMnI\",\n  \"user-agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.5.1 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 96,\n  \"referer\": \"https://conduit.productionready.io/api/articles/\"\n}\nBody: {\"article\":{\"tagList\":[],\"title\":\"Karolina\",\"description\":\"Jestem mistrzem\",\"body\":\"blablabla\"}}\nRedirects: [\n  \"307: https://api.realworld.io/api/articles/\"\n]\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 422 - Unprocessable Entity\nHeaders: {\n  \"date\": \"Wed, 22 Feb 2023 12:04:14 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"39\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"access-control-allow-origin\": \"*\",\n  \"etag\": \"W/\\\"27-BNeuaWQ7DHvW/r+pl+qdJiF06Is\\\"\",\n  \"via\": \"1.1 vegur\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"report-to\": \"{\\\"endpoints\\\":[{\\\"url\\\":\\\"https:\\\\/\\\\/a.nel.cloudflare.com\\\\/report\\\\/v3?s=C7VAb9Sxier6NB3Nst1JUC6VGfgvRNOuQyGzwNU7K2a%2BzrZm%2BePeiOtzFBt9GlEjCQR6qa65cJwPIe1L58schtrWVQloaP4EFy8%2BLQs1cAGWd%2FMx7abaSonoKFkfzucCIlpc\\\"}],\\\"group\\\":\\\"cf-nel\\\",\\\"max_age\\\":604800}\",\n  \"nel\": \"{\\\"success_fraction\\\":0,\\\"report_to\\\":\\\"cf-nel\\\",\\\"max_age\\\":604800}\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"79d795429b350028-WAW\",\n  \"alt-svc\": \"h3=\\\":443\\\"; ma=86400, h3-29=\\\":443\\\"; ma=86400\"\n}\nBody: {\n  \"errors\": {\n    \"title\": [\n      \"must be unique\"\n    ]\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at http://automationpractice.pl/__cypress/runner/cypress_runner.js:160634:80\n    at tryCatcher (http://automationpractice.pl/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://automationpractice.pl/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://automationpractice.pl/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://automationpractice.pl/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://automationpractice.pl/__cypress/runner/cypress_runner.js:11139:18)\n    at _drainQueueStep (http://automationpractice.pl/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://automationpractice.pl/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://automationpractice.pl/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://automationpractice.pl/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Context.eval (http://automationpractice.pl/__cypress/tests?p=cypress/integration/API/drugi_test_API.js:124:10)",
+                "diff": null
+              },
+              "uuid": "8aa5564d-5c3b-4956-8b58-0427696876b9",
+              "parentUUID": "a1b52079-087f-45ea-a7a0-a22cb1e644d1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8aa5564d-5c3b-4956-8b58-0427696876b9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1591,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

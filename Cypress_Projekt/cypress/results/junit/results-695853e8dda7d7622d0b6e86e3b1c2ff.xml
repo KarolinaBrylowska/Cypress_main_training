@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.413" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-02-22T12:05:40" tests="0" file="cypress/integration/metoda_invoke.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="E2E - Invoke" timestamp="2023-02-22T12:05:41" tests="1" time="2.310" failures="0">
+    <testcase name="E2E - Invoke Invoke" time="2.351" classname="Invoke">
+    </testcase>
+  </testsuite>
+</testsuites>

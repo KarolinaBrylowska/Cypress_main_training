@@ -1,0 +1,42 @@
+{
+  "name": "cypress_projekt",
+  "version": "1.0.0",
+  "description": "Automation tests in Cypress\\",
+  "main": "index.js",
+  "scripts": {
+    "open": "npx cypress open",
+    "all": "npx cypress run --record --key fd5c12b7-49be-40f3-a198-09b2367c4d5c",
+    "spec": "npx cypress run --spec 'cypress/integration/klikniecie.js' --headed",
+    "chrome": "npx cypress run --browser chrome --spec 'cypress/integration/klikniecie.js' --headed",
+    "firefox": "npm run spec -- --browser firefox",
+    "browser": "npm run spec -- --browser firefox & npm run spec --browser edge",
+    "delete:reports": "rm -r cypress/results/* || true",
+    "prereport": "npm run delete:reports",
+    "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json",
+    "mochawesome:html": "npx marge mochawesome.json",
+    "full:test": "npm run delete:reports && npm run chrome && npm run mochawesome:merge && npm run mochawesome:html"
+  },
+  "keywords": [
+    "cypress",
+    "automation",
+    "tests"
+  ],
+  "author": "Karolina Brylowska",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.5.1",
+    "cypress-plugin-snapshots": "^1.4.4"
+  },
+  "devDependencies": {
+    "@cypress-audit/lighthouse": "^1.3.1",
+    "@percy/cli": "^1.20.0",
+    "@percy/cypress": "^3.1.2",
+    "cypress-dark": "^1.8.3",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-multi-reporters": "^1.6.2",
+    "mocha-junit-reporter": "^2.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.2",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

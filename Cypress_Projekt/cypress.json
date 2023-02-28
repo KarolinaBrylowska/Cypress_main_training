@@ -1,0 +1,34 @@
+{
+  "baseUrl": "http://automationpractice.pl",
+  "includeShadowDom": false,
+  "chromeWebSecurity": true,
+  "viewportHeight": 1080,
+  "viewportWidth": 1920,
+  "video": false,
+  "theme": "dark",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  },
+  "projectId": "mwkgdu",
+  "ignoreTestFiles": [
+    "**/__snapshots__/*",
+    "**/__image_snapshots__/*"
+  ],
+  "cypress-plugin-snapshots": {
+    "autoCleanUp": false,            
+    "autopassNewSnapshots": true,    
+    "diffLines": 3,                  
+    "excludeFields": [],             
+    "ignoreExtraArrayItems": false,  
+    "ignoreExtraFields": false,      
+    "normalizeJson": true,           
+    "prettier": true,                
+    "imageConfig": {
+      "createDiffImage": true,       
+      "resizeDevicePixelRatio": true,
+      "threshold": 0.01,             
+      "thresholdType": "percent"     
+    }
+}
+}

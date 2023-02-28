@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-02-22T12:04:19.119Z",
+    "end": "2023-02-22T12:04:28.257Z",
+    "duration": 9138,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c5d39b47-e578-4805-89a5-f6e73e220a7c",
+      "title": "",
+      "fullFile": "cypress/integration/API/pierwszy_test_API.js",
+      "file": "cypress/integration/API/pierwszy_test_API.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3d87b32d-c19f-48f0-a270-aff5695144e6",
+          "title": "E2E - Testy API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Weryfikacja tagów API",
+              "fullTitle": "E2E - Testy API Weryfikacja tagów API",
+              "timedOut": null,
+              "duration": 2337,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://angular.realworld.io/\");\ncy.intercept(\"GET\", \"https://api.realworld.io/api/tags\").as(\"requestTag\"); //nasłuchiwanie tego zapytania GET,\n//aliasowanie tego jako requestTag\ncy.wait(\"@requestTag\").then(response => {\n  //uzywamy aliasu, zapisujemy odpowiedz. Następnie odnosimy się do tych responsów i sprawdzamy jej składowe\n  console.log(response);\n  expect(response.response.statusCode).to.equal(200); //response czy zawiera statusCode 200\n  expect(response.response.body.tags).to.contain(\"welcome\").and.to.contain(\"codebaseShow\"); //czy tag zawiera frazę welcome\n});",
+              "err": {},
+              "uuid": "6be05c44-10dc-44a2-a23f-b5081e331b41",
+              "parentUUID": "3d87b32d-c19f-48f0-a270-aff5695144e6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Niepoprawne logowanie",
+              "fullTitle": "E2E - Testy API Niepoprawne logowanie",
+              "timedOut": null,
+              "duration": 1809,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept(\"POST\", \"https://api.realworld.io/api/users/login\").as(\"requestLog\"); //tworzymy alias i nasłuchujemy tego zapytania Post\ncy.get(\" a.nav-link\").contains(\" Sign in \").click(); //klikamy w przycisk Sign in\ncy.login(\"kaka.hdhd@kak.com\", \"huhuh\"); //wykorzystujemy sobie metodę utworzoną w commands =>\ncy.wait(\"@requestLog\"); //czekamy na to, az ten request będzie dostępny\ncy.get(\"@requestLog\").then(resp => {\n  //pobieramy ten request i sprawdzamy odpowiedz\n  console.log(resp); //wyświetlamy ją w konsoli\n  expect(resp.response.statusCode).to.equal(403); //sprawdzamy czy ta odpowiedz zawiera status code 403\n  //cy.fixture(\"example\").then( data =>{ //tutaj wykorzystujemy plik fixtures, ale jeśli w kazdym teście \n  //musielibyśmy to wpisywać to by było kłopotliwe. Do tego słuzy beforeAll, które jest wyzej\n  expect(resp.response.statusMessage).to.equal(this.daneAPI.statusMessage403); //odnosimy się do fixtures, tam okreslamy sobie rozne dane (data).\n  // Pozniej sie do tych danych odnosimy.\n});",
+              "err": {},
+              "uuid": "7b9c6592-a941-4cf1-b713-5b309c4095fa",
+              "parentUUID": "3d87b32d-c19f-48f0-a270-aff5695144e6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Poprawne logowanie",
+              "fullTitle": "E2E - Testy API Poprawne logowanie",
+              "timedOut": null,
+              "duration": 2231,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(this.daneAPI.realEmail, this.daneAPI.realPassword);\ncy.intercept(\"GET\", \"https://api.realworld.io/api/tags\", {\n  fixture: 'tags.json'\n}).as(\"requestTag1\");\ncy.wait(\"@requestTag1\");\ncy.get(\"@requestTag1\").then(resp => {\n  console.log(resp);\n  expect(resp.response.body.tags).to.contain(\"cats\");\n});",
+              "err": {},
+              "uuid": "d6865238-afc3-4f67-ad75-91dd3722e2c3",
+              "parentUUID": "3d87b32d-c19f-48f0-a270-aff5695144e6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6be05c44-10dc-44a2-a23f-b5081e331b41",
+            "7b9c6592-a941-4cf1-b713-5b309c4095fa",
+            "d6865238-afc3-4f67-ad75-91dd3722e2c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6377,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

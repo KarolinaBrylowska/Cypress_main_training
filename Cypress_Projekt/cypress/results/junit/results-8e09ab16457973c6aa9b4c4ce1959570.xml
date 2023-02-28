@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="13.285" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-02-22T12:06:17" tests="0" file="cypress/integration/wpisywanie.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="E2E - Wpisywanie" timestamp="2023-02-22T12:06:18" tests="2" time="13.142" failures="0">
+    <testcase name="E2E - Wpisywanie Wpisywanie wartości w pole" time="13.118" classname="Wpisywanie wartości w pole">
+    </testcase>
+    <testcase name="E2E - Wpisywanie Czyszczenie wartości z pola input" time="0.145" classname="Czyszczenie wartości z pola input">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="3.715" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2023-02-22T12:05:47" tests="0" file="cypress/integration/select.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="E2E - Akcja wybrania opcji select" timestamp="2023-02-22T12:05:47" tests="1" time="3.603" failures="1">
+    <testcase name="E2E - Akcja wybrania opcji select Wybieranie wszystkich opcji" time="0.000" classname="Wybieranie wszystkich opcji">
+      <failure message="`cy.select()` failed because this element is detached from the DOM.
+
+`&lt;select id=&quot;selectProductSort&quot; class=&quot;selectProductSort form-control&quot;&gt;...&lt;/select&gt;`
+
+Cypress requires elements be attached in the DOM to interact with them.
+
+The previous command that ran was:
+
+  &gt; `cy.wrap()`
+
+This DOM element likely became detached somewhere between the previous and current command.
+
+Common situations why this happens:
+  - Your JS framework re-rendered asynchronously
+  - Your app code reacted to an event firing and removed the element
+
+You typically need to re-query for the element or add &apos;guards&apos; which delay Cypress from running new commands.
+
+https://on.cypress.io/element-has-detached-from-dom" type="CypressError"><![CDATA[CypressError: `cy.select()` failed because this element is detached from the DOM.
+
+`<select id="selectProductSort" class="selectProductSort form-control">...</select>`
+
+Cypress requires elements be attached in the DOM to interact with them.
+
+The previous command that ran was:
+
+  > `cy.wrap()`
+
+This DOM element likely became detached somewhere between the previous and current command.
+
+Common situations why this happens:
+  - Your JS framework re-rendered asynchronously
+  - Your app code reacted to an event firing and removed the element
+
+You typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.
+
+https://on.cypress.io/element-has-detached-from-dom
+    at ensureAttached (http://automationpractice.pl/__cypress/runner/cypress_runner.js:163896:76)
+    at validateType (http://automationpractice.pl/__cypress/runner/cypress_runner.js:163729:11)
+    at $Cy.ensureSubjectByType (http://automationpractice.pl/__cypress/runner/cypress_runner.js:163769:9)
+    at $Cy.pushSubjectAndValidate (http://automationpractice.pl/__cypress/runner/cypress_runner.js:173784:12)
+    at Context.<anonymous> (http://automationpractice.pl/__cypress/runner/cypress_runner.js:173216:19)
+From Your Spec Code:
+    at Context.eval (http://automationpractice.pl/__cypress/tests?p=cypress/integration/select.js:171:25)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

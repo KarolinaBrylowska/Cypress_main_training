@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-02-22T12:04:39.018Z",
+    "end": "2023-02-22T12:04:41.758Z",
+    "duration": 2740,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7763f62f-b0d4-49e4-ab40-b97d98d246e8",
+      "title": "",
+      "fullFile": "cypress/integration/alerty.js",
+      "file": "cypress/integration/alerty.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2c0177af-de88-49d7-b62c-248fec6cc3d9",
+          "title": "E2E - Alerty",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test związany z alertem",
+              "fullTitle": "E2E - Alerty Test związany z alertem",
+              "timedOut": null,
+              "duration": 490,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://testowanie-oprogramowania.pl/lekcje/alerty/\"); // to mamy określone w pliku cypress.json\ncy.get(\"#alert\").click();\ncy.on(\"window:alert\", text => {\n  expect(text).to.equal('Przykładowa treść alertu');\n});",
+              "err": {},
+              "uuid": "b5c9f830-c038-4fab-b40f-a3bd3ca56616",
+              "parentUUID": "2c0177af-de88-49d7-b62c-248fec6cc3d9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Alert confirm",
+              "fullTitle": "E2E - Alerty Alert confirm",
+              "timedOut": null,
+              "duration": 118,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#alert-confirm\").click();\ncy.on('window:confirm', tresc => {\n  expect(tresc).to.equal(\"Zaakceptuj aby kontynuować!\");\n});\ncy.on('window:confirm', () => true);",
+              "err": {},
+              "uuid": "231ddc03-eb21-4301-9c3b-383786d3b93a",
+              "parentUUID": "2c0177af-de88-49d7-b62c-248fec6cc3d9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b5c9f830-c038-4fab-b40f-a3bd3ca56616",
+            "231ddc03-eb21-4301-9c3b-383786d3b93a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 608,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

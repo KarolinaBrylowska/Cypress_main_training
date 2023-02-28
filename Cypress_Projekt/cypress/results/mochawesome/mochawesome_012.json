@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-02-22T12:05:47.139Z",
+    "end": "2023-02-22T12:05:50.854Z",
+    "duration": 3715,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "729580af-6b3f-4bd6-90ae-ad0c34c35341",
+      "title": "",
+      "fullFile": "cypress/integration/select.js",
+      "file": "cypress/integration/select.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "73b68d87-d186-4820-ae9c-7bd570ba0ca9",
+          "title": "E2E - Akcja wybrania opcji select",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Wybieranie wszystkich opcji",
+              "fullTitle": "E2E - Akcja wybrania opcji select Wybieranie wszystkich opcji",
+              "timedOut": null,
+              "duration": 3584,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/index.php?id_category=3&controller=category\");\n_selectPage.default.selectAllOption(); //wykorzystując POM, zakomentowane komendy odpowiadają za pierwotną wersję \n//cy.get('#selectProductSort').then(select =>{\n//    cy.wrap(select).find(\"option\").each(opcja =>{\n//       cy.wrap(select).select(opcja.text())\n//   })\n//   })",
+              "err": {
+                "message": "CypressError: `cy.select()` failed because this element is detached from the DOM.\n\n`<select id=\"selectProductSort\" class=\"selectProductSort form-control\">...</select>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.wrap()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom",
+                "estack": "CypressError: `cy.select()` failed because this element is detached from the DOM.\n\n`<select id=\"selectProductSort\" class=\"selectProductSort form-control\">...</select>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.wrap()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at ensureAttached (http://automationpractice.pl/__cypress/runner/cypress_runner.js:163896:76)\n    at validateType (http://automationpractice.pl/__cypress/runner/cypress_runner.js:163729:11)\n    at $Cy.ensureSubjectByType (http://automationpractice.pl/__cypress/runner/cypress_runner.js:163769:9)\n    at $Cy.pushSubjectAndValidate (http://automationpractice.pl/__cypress/runner/cypress_runner.js:173784:12)\n    at Context.<anonymous> (http://automationpractice.pl/__cypress/runner/cypress_runner.js:173216:19)\nFrom Your Spec Code:\n    at Context.eval (http://automationpractice.pl/__cypress/tests?p=cypress/integration/select.js:171:25)",
+                "diff": null
+              },
+              "uuid": "d58d7370-a2cd-4943-8132-8dd58bbf048f",
+              "parentUUID": "73b68d87-d186-4820-ae9c-7bd570ba0ca9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d58d7370-a2cd-4943-8132-8dd58bbf048f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3584,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.731" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2023-02-22T12:04:12" tests="0" file="cypress/integration/API/drugi_test_API.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Wykonywanie zapytania bezpośrednio do API" timestamp="2023-02-22T12:04:12" tests="1" time="1.613" failures="1">
+    <testcase name="Wykonywanie zapytania bezpośrednio do API Autoryzacja + dodawanie nowego wpisu" time="0.000" classname="Autoryzacja + dodawanie nowego wpisu">
+      <failure message="`cy.request()` failed on:
+
+https://conduit.productionready.io/api/articles/
+
+The response we received from your web server was:
+
+  &gt; 422: Unprocessable Entity
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: https://conduit.productionready.io/api/articles/
+Headers: {
+  &quot;Connection&quot;: &quot;keep-alive&quot;,
+  &quot;Authorization&quot;: &quot;Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imthcm9saW5hLmJyeWxvd3NrYUB0ZXN0LmNvbSIsInVzZXJuYW1lIjoia2Fyb2xpbmFfYnJ5bG93c2thIiwiaWF0IjoxNjc3MDY3NDUzLCJleHAiOjE2ODIyNTE0NTN9.VvnaLRWLACVRItmCc6ZkFK0pZPAoP9bjcNz68VsLMnI&quot;,
+  &quot;user-agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.5.1 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36&quot;,
+  &quot;accept&quot;: &quot;*/*&quot;,
+  &quot;accept-encoding&quot;: &quot;gzip, deflate&quot;,
+  &quot;content-type&quot;: &quot;application/json&quot;,
+  &quot;content-length&quot;: 96,
+  &quot;referer&quot;: &quot;https://conduit.productionready.io/api/articles/&quot;
+}
+Body: {&quot;article&quot;:{&quot;tagList&quot;:[],&quot;title&quot;:&quot;Karolina&quot;,&quot;description&quot;:&quot;Jestem mistrzem&quot;,&quot;body&quot;:&quot;blablabla&quot;}}
+Redirects: [
+  &quot;307: https://api.realworld.io/api/articles/&quot;
+]
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 422 - Unprocessable Entity
+Headers: {
+  &quot;date&quot;: &quot;Wed, 22 Feb 2023 12:04:14 GMT&quot;,
+  &quot;content-type&quot;: &quot;application/json; charset=utf-8&quot;,
+  &quot;content-length&quot;: &quot;39&quot;,
+  &quot;connection&quot;: &quot;keep-alive&quot;,
+  &quot;x-powered-by&quot;: &quot;Express&quot;,
+  &quot;access-control-allow-origin&quot;: &quot;*&quot;,
+  &quot;etag&quot;: &quot;W/\&quot;27-BNeuaWQ7DHvW/r+pl+qdJiF06Is\&quot;&quot;,
+  &quot;via&quot;: &quot;1.1 vegur&quot;,
+  &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+  &quot;report-to&quot;: &quot;{\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=C7VAb9Sxier6NB3Nst1JUC6VGfgvRNOuQyGzwNU7K2a%2BzrZm%2BePeiOtzFBt9GlEjCQR6qa65cJwPIe1L58schtrWVQloaP4EFy8%2BLQs1cAGWd%2FMx7abaSonoKFkfzucCIlpc\&quot;}],\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800}&quot;,
+  &quot;nel&quot;: &quot;{\&quot;success_fraction\&quot;:0,\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800}&quot;,
+  &quot;server&quot;: &quot;cloudflare&quot;,
+  &quot;cf-ray&quot;: &quot;79d795429b350028-WAW&quot;,
+  &quot;alt-svc&quot;: &quot;h3=\&quot;:443\&quot;; ma=86400, h3-29=\&quot;:443\&quot;; ma=86400&quot;
+}
+Body: {
+  &quot;errors&quot;: {
+    &quot;title&quot;: [
+      &quot;must be unique&quot;
+    ]
+  }
+}
+
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` failed on:
+
+https://conduit.productionready.io/api/articles/
+
+The response we received from your web server was:
+
+  > 422: Unprocessable Entity
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: https://conduit.productionready.io/api/articles/
+Headers: {
+  "Connection": "keep-alive",
+  "Authorization": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imthcm9saW5hLmJyeWxvd3NrYUB0ZXN0LmNvbSIsInVzZXJuYW1lIjoia2Fyb2xpbmFfYnJ5bG93c2thIiwiaWF0IjoxNjc3MDY3NDUzLCJleHAiOjE2ODIyNTE0NTN9.VvnaLRWLACVRItmCc6ZkFK0pZPAoP9bjcNz68VsLMnI",
+  "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.5.1 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36",
+  "accept": "*/*",
+  "accept-encoding": "gzip, deflate",
+  "content-type": "application/json",
+  "content-length": 96,
+  "referer": "https://conduit.productionready.io/api/articles/"
+}
+Body: {"article":{"tagList":[],"title":"Karolina","description":"Jestem mistrzem","body":"blablabla"}}
+Redirects: [
+  "307: https://api.realworld.io/api/articles/"
+]
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 422 - Unprocessable Entity
+Headers: {
+  "date": "Wed, 22 Feb 2023 12:04:14 GMT",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "39",
+  "connection": "keep-alive",
+  "x-powered-by": "Express",
+  "access-control-allow-origin": "*",
+  "etag": "W/\"27-BNeuaWQ7DHvW/r+pl+qdJiF06Is\"",
+  "via": "1.1 vegur",
+  "cf-cache-status": "DYNAMIC",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=C7VAb9Sxier6NB3Nst1JUC6VGfgvRNOuQyGzwNU7K2a%2BzrZm%2BePeiOtzFBt9GlEjCQR6qa65cJwPIe1L58schtrWVQloaP4EFy8%2BLQs1cAGWd%2FMx7abaSonoKFkfzucCIlpc\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "cf-ray": "79d795429b350028-WAW",
+  "alt-svc": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+}
+Body: {
+  "errors": {
+    "title": [
+      "must be unique"
+    ]
+  }
+}
+
+
+https://on.cypress.io/request
+    at http://automationpractice.pl/__cypress/runner/cypress_runner.js:160634:80
+    at tryCatcher (http://automationpractice.pl/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (http://automationpractice.pl/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (http://automationpractice.pl/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (http://automationpractice.pl/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (http://automationpractice.pl/__cypress/runner/cypress_runner.js:11139:18)
+    at _drainQueueStep (http://automationpractice.pl/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (http://automationpractice.pl/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://automationpractice.pl/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (http://automationpractice.pl/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at Context.eval (http://automationpractice.pl/__cypress/tests?p=cypress/integration/API/drugi_test_API.js:124:10)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

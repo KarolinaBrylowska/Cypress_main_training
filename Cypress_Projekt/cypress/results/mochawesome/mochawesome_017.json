@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-02-22T12:06:35.204Z",
+    "end": "2023-02-22T12:06:43.413Z",
+    "duration": 8209,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "81b0cf61-f64f-4b66-bd86-edb05f2aafe8",
+      "title": "",
+      "fullFile": "cypress/integration/zmienne.js",
+      "file": "cypress/integration/zmienne.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9e3dadc8-01a2-46a1-84a2-3c23ef43fdae",
+          "title": "E2E zmienne",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Zmienne środowiskowe",
+              "fullTitle": "E2E zmienne Zmienne środowiskowe",
+              "timedOut": null,
+              "duration": 3090,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(Cypress.env(\"url\"));",
+              "err": {},
+              "uuid": "abb471d3-2f35-45e2-bea7-c515e30bc905",
+              "parentUUID": "9e3dadc8-01a2-46a1-84a2-3c23ef43fdae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "abb471d3-2f35-45e2-bea7-c515e30bc905"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3090,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
